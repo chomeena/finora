@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planning | Finora</title>
+    <meta name="description" content="Money record book, pricing calculator, break-even calculator and savings planners for small businesses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/creative.css">
+</head>
+<body>
+
+<!-- ================= NAVIGATION BAR ================= -->
+<header class="header">
+    <nav class="navbar container">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Finora</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="awareness.html">Financial Awareness</a></li><li><a href="entrepreneurs.html">Women Entrepreneur</a></li><li><a href="schemes.html">Government Schemes</a></li><li><a href="planning.html" class="active">Financial Planning</a></li></ul>
+        <div class="nav-icons"><a href="#recordbook" aria-label="Record book"><i class="fa-solid fa-book"></i></a><a href="#pricing" aria-label="Pricing"><i class="fa-solid fa-calculator"></i></a></div>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero home-hero">
+    <div class="hero-container container">
+        <div class="hero-content">
+            <span class="hero-label">FINANCIAL PLANNING &bull; PRICE &bull; TRACK &bull; SAVE</span>
+            <h1>Plan your money, <span>grow your business.</span></h1>
+            <h3>Know your numbers</h3>
+            <p>Most small businesses fail from poor money management, not poor products. Record every rupee, price with confidence and know exactly when you start to profit.</p>
+            <div class="hero-buttons"><a href="#recordbook" class="btn btn-primary">Open Record Book <i class="fa-solid fa-book"></i></a><a href="#pricing" class="btn btn-outline">Price My Product <i class="fa-solid fa-tags"></i></a></div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=85" alt="Money planning and savings">
+            <div class="hero-stat-card"><div class="stat-item"><i class="fa-solid fa-book"></i><h3>Record</h3><p>Every rupee</p></div><div class="stat-item"><i class="fa-solid fa-tags"></i><h3>Price</h3><p>With profit</p></div><div class="stat-item"><i class="fa-solid fa-scale-balanced"></i><h3>Break Even</h3><p>Know your target</p></div></div>
+        </div>
+    </div>
+</section>
+<section class="services section-padding" id="recordbook"><div class="container"><div class="section-heading"><span>MONEY RECORD BOOK</span><h2>Write it down. Banks will ask.</h2><p>Add each sale and expense. Download your records as a file to show a lender or accountant.</p></div>
+<div class="rb-wrap">
+<form id="rbForm" class="enquiry-form" novalidate>
+ <div class="form-group"><label for="rbType">Type</label><select id="rbType"><option value="income">Income (sale)</option><option value="expense">Expense</option></select></div>
+ <div class="form-group"><label for="rbAmount">Amount (&#8377;)</label><input type="number" id="rbAmount" min="0.01" step="any" inputmode="decimal" placeholder="e.g. 850"></div>
+ <div class="form-group"><label for="rbNote">Note</label><input type="text" id="rbNote" maxlength="60" placeholder="e.g. 20 packets of snacks"></div>
+ <div class="form-group"><label for="rbDate">Date</label><input type="date" id="rbDate"></div>
+ <small class="error-msg" id="rbError"></small>
+ <button type="submit" class="btn btn-primary">Add Entry <i class="fa-solid fa-plus"></i></button>
+</form>
+<div class="rb-side">
+ <div class="rb-summary"><div><span>Income this month</span><strong id="rbIncome">&#8377;0</strong></div><div><span>Expenses this month</span><strong id="rbExpense">&#8377;0</strong></div><div><span>Profit this month</span><strong id="rbProfit">&#8377;0</strong></div></div>
+ <div class="table-wrap rb-table-wrap"><table class="compare-table rb-table"><thead><tr><th>Date</th><th>Note</th><th>Amount</th><th></th></tr></thead><tbody id="rbBody"></tbody></table></div>
+ <div class="estimator-actions"><button type="button" class="btn btn-outline-dark" id="rbExport">Download CSV <i class="fa-solid fa-download"></i></button><button type="button" class="btn btn-outline-dark" id="rbClear">Clear All <i class="fa-solid fa-trash"></i></button></div>
+ <p class="planner-tip"><i class="fa-solid fa-lock"></i>Saved only in this browser on this device. Clearing browser data will remove it, so download a copy regularly.</p>
+</div></div></div></section><section class="about section-padding" id="pricing"><div class="container"><div class="section-heading"><span>PRICING CALCULATOR</span><h2>Set a price that pays you too</h2><p>Many women price only the materials. This tool also counts your time, packaging and a profit margin.</p></div>
+<div class="estimator-wrapper ew-split">
+<form id="priceForm" class="estimator-form" novalidate>
+ <div class="form-group"><label for="prMaterial">Material cost per item (&#8377;)</label><input type="number" id="prMaterial" min="0" step="any" inputmode="decimal" placeholder="e.g. 40"></div>
+ <div class="form-group"><label for="prOther">Packaging, transport and other cost per item (&#8377;)</label><input type="number" id="prOther" min="0" step="any" inputmode="decimal" placeholder="e.g. 8"></div>
+ <div class="form-group"><label for="prMinutes">Your time per item (minutes)</label><input type="number" id="prMinutes" min="0" step="any" inputmode="decimal" placeholder="e.g. 15"></div>
+ <div class="form-group"><label for="prHourly">Value of one hour of your time (&#8377;)</label><input type="number" id="prHourly" min="0" step="any" inputmode="decimal" placeholder="e.g. 100"></div>
+ <div class="form-group"><label for="prMargin">Profit margin you want (%)</label><input type="number" id="prMargin" min="0" step="any" inputmode="decimal" placeholder="e.g. 20"></div>
+ <div class="form-group"><label for="prUnits">Items you can sell in a month <span class="optional">(optional)</span></label><input type="number" id="prUnits" min="0" step="any" inputmode="decimal" placeholder="e.g. 300"></div>
+ <small class="error-msg" id="priceError"></small>
+ <div class="estimator-actions"><button type="submit" class="btn btn-primary">Calculate Price <i class="fa-solid fa-tags"></i></button><button type="reset" class="btn btn-outline-dark" id="priceReset">Reset <i class="fa-solid fa-rotate-left"></i></button></div>
+</form>
+<div class="estimator-result has-result" id="priceResult" aria-live="polite"><i class="fa-solid fa-tags"></i><h3>Suggested Selling Price</h3><p class="result-main" id="priceMain">Enter your costs to see the result.</p><p class="result-sub" id="priceSub"></p><div class="viz" id="priceViz"></div></div>
+</div></div></section><section class="services section-padding" id="breakeven"><div class="container"><div class="section-heading"><span>BREAK-EVEN CALCULATOR</span><h2>How many sales until you profit?</h2><p>Fixed costs come every month whether you sell or not. Find the point where sales cover them.</p></div>
+<div class="estimator-wrapper ew-reverse">
+<form id="beForm" class="estimator-form" novalidate>
+ <div class="form-group"><label for="beFixed">Fixed costs per month (&#8377;)</label><input type="number" id="beFixed" min="0" step="any" inputmode="decimal" placeholder="rent, electricity, internet, e.g. 6000"></div>
+ <div class="form-group"><label for="bePrice">Selling price per item (&#8377;)</label><input type="number" id="bePrice" min="0" step="any" inputmode="decimal" placeholder="e.g. 120"></div>
+ <div class="form-group"><label for="beVar">Cost to make one item (&#8377;)</label><input type="number" id="beVar" min="0" step="any" inputmode="decimal" placeholder="materials and packaging, e.g. 55"></div>
+ <div class="form-group"><label for="beTarget">Monthly profit you want (&#8377;) <span class="optional">(optional)</span></label><input type="number" id="beTarget" min="0" step="any" inputmode="decimal" placeholder="e.g. 10000"></div>
+ <small class="error-msg" id="beError"></small>
+ <div class="estimator-actions"><button type="submit" class="btn btn-primary">Calculate <i class="fa-solid fa-scale-balanced"></i></button><button type="reset" class="btn btn-outline-dark" id="beReset">Reset <i class="fa-solid fa-rotate-left"></i></button></div>
+</form>
+<div class="estimator-result has-result" id="beResult" aria-live="polite"><i class="fa-solid fa-scale-balanced"></i><h3>Break-Even Point</h3><p class="result-main" id="beMain">Enter your numbers to see the result.</p><p class="result-sub" id="beSub"></p><div class="viz" id="beViz"></div></div>
+</div></div></section><section class="about section-padding" id="estimator">
+    <div class="container">
+        <div class="section-heading">
+            <span>SAVE FOR A GOAL</span>
+            <h2>Savings Goal Estimator</h2>
+            <p>
+                Find out roughly how long it will take
+                to reach your savings goal.
+            </p>
+        </div>
+
+        <div class="estimator-wrapper ew-banner">
+            <form id="savingsForm" class="estimator-form" novalidate>
+                <div class="form-group">
+                    <label for="goalAmount">Goal Amount (&#8377;)</label>
+                    <input type="number" id="goalAmount" min="1" step="any" placeholder="e.g. 100000" inputmode="decimal">
+                    <small class="error-msg" id="goalError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="monthlySaving">Monthly Saving (&#8377;)</label>
+                    <input type="number" id="monthlySaving" min="1" step="any" placeholder="e.g. 5000" inputmode="decimal">
+                    <small class="error-msg" id="monthlyError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="interestRate">Yearly Interest Rate % <span class="optional">(optional)</span></label>
+                    <input type="number" id="interestRate" min="0" max="30" step="any" placeholder="e.g. 7" inputmode="decimal">
+                    <small class="error-msg" id="interestError"></small>
+                </div>
+
+                <div class="estimator-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Calculate
+                        <i class="fa-solid fa-calculator"></i>
+                    </button>
+                    <button type="reset" class="btn btn-outline-dark" id="estimatorReset">
+                        Reset
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="estimator-result" id="estimatorResult" aria-live="polite">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <h3>Time to Reach Your Goal</h3>
+                <p class="result-main" id="resultMain">Enter your goal and monthly saving to see the result.</p>
+                <p class="result-sub" id="resultSub"></p>
+            </div>
+        </div>
+
+        <p class="scheme-note">
+            <i class="fa-solid fa-circle-info"></i>
+            Leave the interest rate empty for a simple estimate. With a rate, savings are assumed to earn interest compounded monthly. Real returns can differ.
+        </p>
+    </div>
+</section><section class="services section-padding" id="rule"><div class="container"><div class="section-heading"><span>THE 50/30/20 RULE</span><h2>Where should each month&rsquo;s money go?</h2><p>A simple split many planners use as a starting point. Type your monthly income and watch the circle.</p></div>
+<div class="rule-wrap">
+ <div class="donut" role="img" aria-label="Donut chart: 50 percent needs, 30 percent wants, 20 percent savings"><div class="donut-hole"><span>Monthly income</span><b id="ruleHole">&#8377;30,000</b></div></div>
+ <div><div class="rule-income"><label for="ruleIncome">Your monthly income (&#8377;)</label><input type="number" id="ruleIncome" min="0" step="any" value="30000" inputmode="decimal"></div>
+  <div class="rule-row"><span class="sw" style="background:#39275D"></span><div><b>Needs &middot; 50%</b><small>Rent, food, bills, EMI, transport</small></div><strong id="ruleNeeds">&#8377;15,000</strong></div>
+  <div class="rule-row"><span class="sw" style="background:#D9A441"></span><div><b>Wants &middot; 30%</b><small>Shopping, outings, subscriptions</small></div><strong id="ruleWants">&#8377;9,000</strong></div>
+  <div class="rule-row"><span class="sw" style="background:#4FA37F"></span><div><b>Savings &middot; 20%</b><small>Emergency fund, goals, investing</small></div><strong id="ruleSave">&#8377;6,000</strong></div>
+  <div class="rule-tip"><i class="fa-solid fa-lightbulb" style="color:#D9A441;margin-right:6px"></i>Business owners: pay yourself a fixed monthly amount from the business first, then split that amount using this rule.</div>
+ </div></div></div></section><section class="about section-padding" id="planner">
+    <div class="container">
+        <div class="section-heading">
+            <span>PERSONAL MONEY</span>
+            <h2>Budget &amp; Emergency Fund Planner</h2>
+            <p>
+                See how your monthly money is split, and how much
+                safety net you should aim for.
+            </p>
+        </div>
+
+        <div class="planner-grid">
+
+            <!-- BUDGET PLANNER -->
+            <div class="planner-card">
+                <div class="planner-head">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <h3>Monthly Budget Check</h3>
+                </div>
+                <form id="budgetForm" novalidate>
+                    <div class="form-group">
+                        <label for="budIncome">Monthly Income (&#8377;)</label>
+                        <input type="number" id="budIncome" min="1" step="any" placeholder="e.g. 30000" inputmode="decimal">
+                    </div>
+                    <div class="form-group">
+                        <label for="budNeeds">Needs: rent, food, bills, EMI (&#8377;)</label>
+                        <input type="number" id="budNeeds" min="0" step="any" placeholder="e.g. 15000" inputmode="decimal">
+                    </div>
+                    <div class="form-group">
+                        <label for="budWants">Wants: shopping, outings, subscriptions (&#8377;)</label>
+                        <input type="number" id="budWants" min="0" step="any" placeholder="e.g. 7000" inputmode="decimal">
+                    </div>
+                    <small class="error-msg" id="budgetError"></small>
+                    <div class="estimator-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Check Budget
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </button>
+                        <button type="reset" class="btn btn-outline-dark" id="budgetReset">
+                            Reset
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="planner-result" id="budgetResult" aria-live="polite" hidden></div>
+                <p class="planner-tip">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    A common guide is the 50/30/20 rule: about 50% for needs,
+                    30% for wants and 20% for savings.
+                </p>
+            </div>
+
+            <!-- EMERGENCY FUND -->
+            <div class="planner-card">
+                <div class="planner-head">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Emergency Fund Target</h3>
+                </div>
+                <form id="emergencyForm" novalidate>
+                    <div class="form-group">
+                        <label for="emExpenses">Essential Monthly Expenses (&#8377;)</label>
+                        <input type="number" id="emExpenses" min="1" step="any" placeholder="e.g. 15000" inputmode="decimal">
+                    </div>
+                    <div class="form-group">
+                        <label for="emMonths">Months of Safety</label>
+                        <select id="emMonths">
+                            <option value="3">3 months (minimum)</option>
+                            <option value="6" selected>6 months (recommended)</option>
+                            <option value="9">9 months (irregular income)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="emSaved">Already Saved (&#8377;) <span class="optional">(optional)</span></label>
+                        <input type="number" id="emSaved" min="0" step="any" placeholder="e.g. 20000" inputmode="decimal">
+                    </div>
+                    <small class="error-msg" id="emergencyError"></small>
+                    <div class="estimator-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Calculate Target
+                            <i class="fa-solid fa-calculator"></i>
+                        </button>
+                        <button type="reset" class="btn btn-outline-dark" id="emergencyReset">
+                            Reset
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="planner-result" id="emergencyResult" aria-live="polite" hidden></div>
+                <p class="planner-tip">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Keep your emergency fund in an easy-to-access account,
+                    separate from your regular spending money.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section><section class="services section-padding" id="checklist"><div class="container"><div class="section-heading"><span>MONEY HABITS</span><h2>Eight habits of a financially strong business</h2><p>Tick the ones you already follow, and work on the rest.</p></div>
+<div class="checklist-box"><div class="cl-block" data-checklist="habits"><div class="progress-head"><span class="cl-count">0 of 8 done</span><span class="cl-pct">0%</span></div><div class="progress-track" aria-hidden="true"><div class="progress-fill cl-fill"></div></div><ul class="checklist"><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Keep business money and household money in separate accounts</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Record every sale and expense, ideally every day</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Pay myself a fixed monthly amount</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Set aside money for taxes and licence renewals</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Keep an emergency fund of 3 to 6 months of essential expenses</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Avoid informal lenders who charge very high interest</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Never share my OTP, PIN or passwords with anyone</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Review profit and goals every month</span></label></li></ul></div></div></div></section><section class="cta-section">
+    <div class="container cta-content">
+        <div><span>READY TO BORROW?</span><h2>Check if a loan makes sense for you.</h2><p>Find matching schemes and see what a loan will cost each month.</p></div>
+        <a href="schemes.html#finder" class="btn btn-primary">Open Scheme Finder <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo"><i class="fa-solid fa-leaf"></i> Finora</a>
+                <p>Free tools and guides to help women in India start, fund and grow their own businesses.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a><a href="awareness.html">Financial Awareness</a><a href="entrepreneurs.html">Women Entrepreneur</a><a href="schemes.html">Government Schemes</a><a href="planning.html">Financial Planning</a>
+            </div>
+            <div class="footer-links">
+                <h3>Popular Tools</h3>
+                <a href="schemes.html#finder">Scheme Finder</a>
+                <a href="schemes.html#readiness">Loan Readiness Check</a>
+                <a href="entrepreneurs.html#matcher">Business Idea Matcher</a>
+                <a href="planning.html#recordbook">Money Record Book</a>
+                <a href="awareness.html#scamgame">Scam Spotter</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Report Fraud</h3>
+                <p><i class="fa-solid fa-phone"></i> Cyber fraud helpline: 1930</p>
+                <p><i class="fa-solid fa-globe"></i> <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">cybercrime.gov.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Finora. All Rights Reserved.</p>
+            <p>Empowering Women. Enabling Financial Freedom.</p>
+            <p class="footer-disclaimer">Information on this site is for awareness only and may change. Please verify details on official government portals before you apply.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/creative.js"></script>
+</body>
+</html>

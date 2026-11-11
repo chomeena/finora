@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Schemes | Finora</title>
+    <meta name="description" content="Find government schemes that fit you, check loan readiness, calculate EMI and get your documents ready.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/creative.css">
+</head>
+<body>
+
+<!-- ================= NAVIGATION BAR ================= -->
+<header class="header">
+    <nav class="navbar container">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Finora</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="awareness.html">Financial Awareness</a></li><li><a href="entrepreneurs.html">Women Entrepreneur</a></li><li><a href="schemes.html" class="active">Government Schemes</a></li><li><a href="planning.html">Financial Planning</a></li></ul>
+        <div class="nav-icons"><a href="#finder" aria-label="Scheme finder"><i class="fa-solid fa-magnifying-glass"></i></a><a href="#enquiry" aria-label="Ask a question"><i class="fa-regular fa-envelope"></i></a></div>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero home-hero">
+    <div class="hero-container container">
+        <div class="hero-content">
+            <span class="hero-label">GOVERNMENT SCHEMES &bull; FUNDING &bull; SUPPORT</span>
+            <h1>Find funding <span>that fits you.</span></h1>
+            <h3>Match. Check. Apply.</h3>
+            <p>Most women never use government schemes because they do not know which one fits, or the paperwork feels too hard. Answer a few questions and we will do the matching for you.</p>
+            <div class="hero-buttons"><a href="#finder" class="btn btn-primary">Find My Scheme <i class="fa-solid fa-arrow-right"></i></a><a href="#readiness" class="btn btn-outline">Check Loan Readiness <i class="fa-solid fa-clipboard-check"></i></a></div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85" alt="Women discussing funding options">
+            <div class="hero-stat-card"><div class="stat-item"><i class="fa-solid fa-magnifying-glass-dollar"></i><h3>Match</h3><p>Schemes for you</p></div><div class="stat-item"><i class="fa-solid fa-clipboard-check"></i><h3>Check</h3><p>Loan readiness</p></div><div class="stat-item"><i class="fa-solid fa-calculator"></i><h3>Plan</h3><p>Know your EMI</p></div></div>
+        </div>
+    </div>
+</section>
+<section class="services section-padding" id="finder"><div class="container"><div class="section-heading"><span>SCHEME FINDER</span><h2>Which scheme is right for me?</h2><p>Answer a few quick questions. Nothing is stored or sent anywhere.</p></div>
+<div class="wizard" id="finderWizard">
+ <div class="progress-head"><span id="finderStep">Question 1</span><span id="finderPct"></span></div>
+ <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="finderBar"></div></div>
+ <h3 class="wizard-q" id="finderQ"></h3>
+ <div class="option-list" id="finderOptions"></div>
+ <div class="wizard-actions"><button type="button" class="btn-outline-dark" id="finderBack">Back</button></div>
+ <div class="wizard-results" id="finderResults" hidden></div>
+</div>
+<p class="scheme-note"><i class="fa-solid fa-circle-info"></i>Matches are a guide. Rules and limits change, so confirm on the official portal or at your bank before applying.</p>
+</div></section><section class="about section-padding" id="readiness"><div class="container"><div class="section-heading"><span>LOAN READINESS CHECK</span><h2>Are you ready to apply for a loan?</h2><p>Banks look at the same few things. See where you stand and what to fix first.</p></div>
+<form id="readyForm" class="ready-form" novalidate><div class="ready-q" data-key="bank"><p>1. Do you have a bank account in your own name?</p><div class="chips"><label class="chip"><input type="radio" name="bank" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="bank" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="udyam"><p>2. Is your business registered on Udyam?</p><div class="chips"><label class="chip"><input type="radio" name="udyam" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="udyam" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="plan"><p>3. Do you have a written business plan or project report?</p><div class="chips"><label class="chip"><input type="radio" name="plan" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="plan" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="records"><p>4. Do you keep records of your sales and expenses (last 3 months)?</p><div class="chips"><label class="chip"><input type="radio" name="records" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="records" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="amount"><p>5. Do you know exactly how much you need and what you will buy (with quotations)?</p><div class="chips"><label class="chip"><input type="radio" name="amount" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="amount" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="credit"><p>6. Do you pay bills and EMIs on time, and have you checked your credit score?</p><div class="chips"><label class="chip"><input type="radio" name="credit" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="credit" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="kyc"><p>7. Are your Aadhaar, PAN and address proof ready, with your mobile linked?</p><div class="chips"><label class="chip"><input type="radio" name="kyc" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="kyc" value="0"><span>Not yet</span></label></div></div><div class="ready-q" data-key="own"><p>8. Can you put some of your own money into the business?</p><div class="chips"><label class="chip"><input type="radio" name="own" value="1"><span>Yes</span></label><label class="chip"><input type="radio" name="own" value="0"><span>Not yet</span></label></div></div>
+ <small class="error-msg" id="readyError"></small>
+ <div class="estimator-actions"><button type="submit" class="btn btn-primary">See My Result <i class="fa-solid fa-clipboard-check"></i></button><button type="reset" class="btn btn-outline-dark" id="readyReset">Reset <i class="fa-solid fa-rotate-left"></i></button></div>
+</form>
+<div class="ready-result" id="readyResult" aria-live="polite" hidden></div>
+</div></section><section class="services section-padding" id="emi"><div class="container"><div class="section-heading"><span>LOAN EMI CALCULATOR</span><h2>What will this loan really cost?</h2><p>Work out the monthly instalment and check it against your profit before you borrow.</p></div>
+<div class="estimator-wrapper">
+<form id="emiForm" class="estimator-form" novalidate>
+ <div class="form-group"><label for="emiAmount">Loan Amount (&#8377;)</label><input type="number" id="emiAmount" min="1" step="any" placeholder="e.g. 200000" inputmode="decimal"></div>
+ <div class="form-group"><label for="emiRate">Yearly Interest Rate (%)</label><input type="number" id="emiRate" min="0" max="48" step="any" placeholder="e.g. 11" inputmode="decimal"></div>
+ <div class="form-group"><label for="emiYears">Loan Period (years)</label><input type="number" id="emiYears" min="0.5" max="30" step="any" placeholder="e.g. 3" inputmode="decimal"></div>
+ <div class="form-group"><label for="emiProfit">Your Monthly Profit (&#8377;) <span class="optional">(optional)</span></label><input type="number" id="emiProfit" min="0" step="any" placeholder="e.g. 25000" inputmode="decimal"></div>
+ <small class="error-msg" id="emiError"></small>
+ <div class="estimator-actions"><button type="submit" class="btn btn-primary">Calculate <i class="fa-solid fa-calculator"></i></button><button type="reset" class="btn btn-outline-dark" id="emiReset">Reset <i class="fa-solid fa-rotate-left"></i></button></div>
+</form>
+<div class="estimator-result has-result" id="emiResult" aria-live="polite"><i class="fa-solid fa-indian-rupee-sign"></i><h3>Your Monthly EMI</h3><p class="result-main" id="emiMain">Enter the loan details to see the result.</p><p class="result-sub" id="emiSub"></p></div>
+</div>
+<p class="scheme-note"><i class="fa-solid fa-circle-info"></i>A common rule of thumb is to keep all EMIs under about 30% to 40% of your monthly profit. Rates differ by bank and scheme, so use the rate you are offered.</p>
+</div></section><section class="about section-padding" id="apply"><div class="container"><div class="section-heading"><span>HOW TO APPLY</span><h2>Five steps from scheme to sanction</h2><p>Studies show women often drop out because the process feels complex. Take it one step at a time.</p></div>
+<div class="steps-row"><div class="step-card"><span class="step-num">1</span><h3>Choose a scheme</h3><p>Use the <a href="#finder">Scheme Finder</a> and read the official portal for the latest rules.</p></div><div class="step-card"><span class="step-num">2</span><h3>Register and open accounts</h3><p>Get your <a href="https://udyamregistration.gov.in/" target="_blank" rel="noopener noreferrer">Udyam</a> certificate and a bank account in your own name.</p></div><div class="step-card"><span class="step-num">3</span><h3>Prepare plan and papers</h3><p>Make a <a href="entrepreneurs.html#planbuilder">one-page plan</a> and tick off the document checklist below.</p></div><div class="step-card"><span class="step-num">4</span><h3>Apply directly</h3><p>Apply at a bank branch or on the official portal. Do not pay anyone to guarantee approval.</p></div><div class="step-card"><span class="step-num">5</span><h3>Follow up</h3><p>Note your application number, visit the branch every week or two, and ask politely for status.</p></div></div>
+<div class="safety-notice" style="margin-top:35px"><i class="fa-solid fa-circle-exclamation"></i><div><h3>If your application is rejected</h3><p>Ask the bank for the reason in writing. Fix that one issue, such as missing records or a low credit score, and apply again or try another bank. If you believe you were treated unfairly, you can raise a complaint on the government grievance portal, <a href="https://pgportal.gov.in/" target="_blank" rel="noopener noreferrer">pgportal.gov.in</a>.</p></div></div>
+</div></section><section class="services section-padding" id="documents"><div class="container"><div class="section-heading"><span>DOCUMENT CHECKLIST</span><h2>Get your papers ready</h2><p>Missing documents are one of the most common reasons applications stall. Requirements vary by scheme and bank.</p></div>
+<div class="checklist-box"><div class="cl-block" data-checklist="docs"><div class="progress-head"><span class="cl-count">0 of 10 done</span><span class="cl-pct">0%</span></div><div class="progress-track" aria-hidden="true"><div class="progress-fill cl-fill"></div></div><ul class="checklist"><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Aadhaar card (mobile number linked)</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">PAN card</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Address proof (recent electricity bill, rent agreement or similar)</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Passport-size photographs</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Bank passbook or last 6 months of bank statements</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Udyam registration certificate</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Business plan or project report</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Quotations for machines or raw materials</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Caste certificate, if applying under SC/ST category</span></label></li><li><label class="check-item"><input type="checkbox"><span class="check-box"><i class="fa-solid fa-check"></i></span><span class="check-text">Business address proof or licence, where required (for example a food licence)</span></label></li></ul></div></div>
+</div></section><section class="about section-padding" id="ladder"><div class="container"><div class="section-heading"><span>PM MUDRA YOJANA</span><h2>Climb the loan ladder, one step at a time</h2><p>Mudra loans come in four steps with no collateral needed. Tap a step to see who it is for.</p></div>
+<div class="ladder">
+ <div class="rungs" role="group" aria-label="Mudra loan steps">
+  <button type="button" class="rung" data-tag="STEP 1" data-name="Shishu" data-amt="Up to &#8377;50,000" data-text="For people just starting out, such as a home kitchen, tailoring, a small stall or a beauty service." data-tip="Repay on time. A clean record helps you move to the next step."><i class="fa-solid fa-seedling"></i><b>Shishu</b><small>to &#8377;50K</small></button>
+  <button type="button" class="rung" data-tag="STEP 2" data-name="Kishore" data-amt="&#8377;50,001 to &#8377;5 lakh" data-text="For a business that has started and needs equipment, stock or a small workspace to grow." data-tip="Keep your sales records and bank statements ready. Lenders ask for them."><i class="fa-solid fa-leaf"></i><b>Kishore</b><small>to &#8377;5L</small></button>
+  <button type="button" class="rung" data-tag="STEP 3" data-name="Tarun" data-amt="&#8377;5 lakh to &#8377;10 lakh" data-text="For an established business that wants to expand, add machines or hire people." data-tip="Check the EMI against your monthly profit with the EMI Calculator above."><i class="fa-solid fa-tree"></i><b>Tarun</b><small>to &#8377;10L</small></button>
+  <button type="button" class="rung" data-tag="STEP 4" data-name="Tarun Plus" data-amt="&#8377;10 lakh to &#8377;20 lakh" data-text="For entrepreneurs who have already repaid an earlier Tarun loan successfully and want to scale further." data-tip="Repayment history is what unlocks this step."><i class="fa-solid fa-trophy"></i><b>Tarun Plus</b><small>to &#8377;20L</small></button>
+ </div>
+ <div class="ladder-panel" aria-live="polite"><span class="tag" id="ladTag"></span><h3 id="ladName"></h3><div class="ladder-amount" id="ladAmt"></div><p id="ladText"></p><div class="tip"><i class="fa-solid fa-lightbulb" style="color:#D9A441;margin-right:6px"></i><span id="ladTip"></span></div></div>
+</div>
+<p class="scheme-note"><i class="fa-solid fa-circle-info"></i>Limits are as announced for the MUDRA scheme and can change. Confirm the latest figures with your bank before applying.</p>
+</div></section><section class="services section-padding" id="schemes">
+    <div class="container">
+        <div class="section-heading">
+            <span>POPULAR SCHEMES FOR WOMEN</span>
+            <h2>Schemes That Can Help You Start</h2>
+            <p>
+                Three widely used central government schemes
+                for women who want to start or expand a business.
+            </p>
+        </div>
+
+        <div class="scheme-grid">
+            <!-- Stand-Up India -->
+            <article class="scheme-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <h3>Stand-Up India</h3>
+                <span class="scheme-tag">BEING REVAMPED</span>
+                <p>
+                    Bank loans to help women and SC/ST entrepreneurs
+                    start a new business. The original scheme ended on
+                    31 March 2025 and a revamped version with higher
+                    loan limits has been announced.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> For first-time (new) enterprises</li>
+                    <li><i class="fa-solid fa-check"></i> Check the portal for the latest rules and limits</li>
+                </ul>
+                <a href="https://www.standupmitra.in/" target="_blank" rel="noopener noreferrer">
+                    Visit Official Portal
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <!-- PM Mudra Yojana -->
+            <article class="scheme-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3>PM Mudra Yojana</h3>
+                <span class="scheme-tag">COLLATERAL-FREE</span>
+                <p>
+                    Collateral-free loans for small and micro
+                    enterprises, available in stages based on
+                    your business needs.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> Loans up to ₹20 lakh across Shishu, Kishore, Tarun and Tarun Plus</li>
+                    <li><i class="fa-solid fa-check"></i> For new and existing small businesses</li>
+                </ul>
+                <a href="https://www.mudra.org.in/" target="_blank" rel="noopener noreferrer">
+                    Visit Official Portal
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <!-- PMEGP -->
+            <article class="scheme-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <h3>PMEGP</h3>
+                <span class="scheme-tag">CREDIT-LINKED SUBSIDY</span>
+                <p>
+                    Credit-linked subsidy support for setting up
+                    new micro enterprises and creating
+                    self-employment opportunities.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> Higher subsidy rate for women applicants</li>
+                    <li><i class="fa-solid fa-check"></i> Applied online through the PMEGP portal</li>
+                </ul>
+                <a href="https://www.kviconline.gov.in/pmegpeportal/" target="_blank" rel="noopener noreferrer">
+                    Visit Official Portal
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+        </div>
+
+        <p class="scheme-note">
+            <i class="fa-solid fa-circle-info"></i>
+            Last reviewed: November 2026. Loan limits, subsidy rates and rules can change.
+            Always confirm the latest details on the official portal or at your bank branch.
+        </p>
+
+        <!-- MORE SCHEMES -->
+        <div class="section-heading more-heading" id="more-schemes">
+            <span>MORE SUPPORT FOR WOMEN</span>
+            <h2>Other Schemes Worth Knowing</h2>
+            <p>
+                Programmes for rural women, savings for girls
+                and women-focused enterprise support.
+            </p>
+        </div>
+
+        <div class="scheme-grid scheme-grid-4">
+            <article class="scheme-card">
+                <div class="service-icon"><i class="fa-solid fa-people-roof"></i></div>
+                <h3>Lakhpati Didi</h3>
+                <span class="scheme-tag">SELF-HELP GROUPS</span>
+                <p>
+                    Helps rural women in self-help groups build skills,
+                    credit access and market links to earn ₹1 lakh or
+                    more every year.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> Run under DAY-NRLM (Ministry of Rural Development)</li>
+                    <li><i class="fa-solid fa-check"></i> Join through your local self-help group</li>
+                </ul>
+                <a href="https://aajeevika.gov.in/" target="_blank" rel="noopener noreferrer">
+                    Visit Official Portal
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="scheme-card">
+                <div class="service-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                <h3>Sukanya Samriddhi Yojana</h3>
+                <span class="scheme-tag">GIRL CHILD SAVINGS</span>
+                <p>
+                    A government-backed savings account for a girl child,
+                    opened by a parent or guardian before she turns ten.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> Interest rate is set by the government every quarter (8.2% at last check)</li>
+                    <li><i class="fa-solid fa-check"></i> Deposits up to ₹1.5 lakh a year</li>
+                </ul>
+                <a href="https://www.indiapost.gov.in/" target="_blank" rel="noopener noreferrer">
+                    Visit India Post
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="scheme-card">
+                <div class="service-icon"><i class="fa-solid fa-store"></i></div>
+                <h3>Mahila Udyam Nidhi &amp; Udyogini</h3>
+                <span class="scheme-tag">WOMEN-FOCUSED LOANS</span>
+                <p>
+                    Loan programmes designed for women starting or
+                    growing small enterprises, offered through banks
+                    and development institutions.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> Terms differ from lender to lender</li>
+                    <li><i class="fa-solid fa-check"></i> Ask your bank or SIDBI for current details</li>
+                </ul>
+                <a href="https://www.sidbi.in/" target="_blank" rel="noopener noreferrer">
+                    Visit SIDBI
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+
+            <article class="scheme-card">
+                <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>TREAD</h3>
+                <span class="scheme-tag">TRAINING &amp; SUPPORT</span>
+                <p>
+                    Trade Related Entrepreneurship Assistance and
+                    Development: training and credit-linked support
+                    for women entrepreneurs.
+                </p>
+                <ul class="scheme-points">
+                    <li><i class="fa-solid fa-check"></i> Usually reached through NGOs and training institutions</li>
+                    <li><i class="fa-solid fa-check"></i> Run by the Ministry of MSME</li>
+                </ul>
+                <a href="https://msme.gov.in/" target="_blank" rel="noopener noreferrer">
+                    Visit MSME Ministry
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </article>
+        </div>
+
+        <p class="scheme-note">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            The Mahila Samman Savings Certificate no longer accepts new deposits
+            (closed after 31 March 2025). Existing accounts continue until maturity.
+        </p>
+
+        <!-- COMPARISON TABLE -->
+        <div class="section-heading more-heading" id="compare">
+            <span>AT A GLANCE</span>
+            <h2>Which Scheme Fits You?</h2>
+            <p>A quick comparison to help you choose where to start.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Scheme</th>
+                        <th>Best for</th>
+                        <th>What you get</th>
+                        <th>Collateral</th>
+                        <th>Where to apply</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Scheme"><strong>Stand-Up India (revamped)</strong></td>
+                        <td data-label="Best for">First-time women and SC/ST entrepreneurs</td>
+                        <td data-label="What you get">Bank term loan for a new business; higher limits announced</td>
+                        <td data-label="Collateral">Credit guarantee cover; confirm latest rules</td>
+                        <td data-label="Where to apply">Bank branch or Stand-Up Mitra portal</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Scheme"><strong>PM Mudra Yojana</strong></td>
+                        <td data-label="Best for">Small and micro businesses</td>
+                        <td data-label="What you get">Loans up to ₹20 lakh</td>
+                        <td data-label="Collateral">Collateral-free</td>
+                        <td data-label="Where to apply">Banks, NBFCs and MFIs</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Scheme"><strong>PMEGP</strong></td>
+                        <td data-label="Best for">New micro enterprises</td>
+                        <td data-label="What you get">Credit-linked subsidy, higher for women</td>
+                        <td data-label="Collateral">As per bank norms</td>
+                        <td data-label="Where to apply">PMEGP e-portal</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Scheme"><strong>Lakhpati Didi</strong></td>
+                        <td data-label="Best for">Rural women in self-help groups</td>
+                        <td data-label="What you get">Skills, credit access and market links</td>
+                        <td data-label="Collateral">Through the self-help group</td>
+                        <td data-label="Where to apply">Local SHG / DAY-NRLM</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Scheme"><strong>Sukanya Samriddhi</strong></td>
+                        <td data-label="Best for">Parents of a girl child under ten</td>
+                        <td data-label="What you get">Government-backed savings account</td>
+                        <td data-label="Collateral">Not applicable</td>
+                        <td data-label="Where to apply">Post office or bank</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section><section class="about section-padding" id="enquiry">
+    <div class="container">
+        <div class="section-heading">
+            <span>HAVE A QUESTION?</span>
+            <h2>Ask About a Scheme</h2>
+            <p>
+                Tell us what kind of support you are looking for
+                and we will help you find the right scheme.
+            </p>
+        </div>
+
+        <div class="enquiry-wrapper">
+            <form id="schemeForm" class="enquiry-form" novalidate>
+
+                <div class="form-group">
+                    <label for="enqName">Full Name</label>
+                    <input type="text" id="enqName" name="name" placeholder="Enter your full name" autocomplete="name">
+                    <small class="error-msg" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="enqEmail">Email Address</label>
+                    <input type="email" id="enqEmail" name="email" placeholder="Enter your email" autocomplete="email">
+                    <small class="error-msg" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="enqType">Type of Assistance</label>
+                    <select id="enqType" name="assistance">
+                        <option value="">Select type of assistance</option>
+                        <option value="business-loan">Business Loan</option>
+                        <option value="subsidy">Subsidy Support</option>
+                        <option value="collateral-free">Collateral-Free Loan</option>
+                        <option value="training">Training &amp; Skill Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <small class="error-msg" id="typeError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="enqMessage">Message</label>
+                    <textarea id="enqMessage" name="message" rows="5" placeholder="Describe your business idea or your question"></textarea>
+                    <small class="error-msg" id="messageError"></small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Submit Enquiry
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+                <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p id="successText"></p>
+                </div>
+            </form>
+
+            <aside class="enquiry-side">
+                <i class="fa-solid fa-headset"></i>
+                <h3>We are here to help</h3>
+                <p>
+                    Not sure which scheme suits your business?
+                    Share a few details and get pointed to the
+                    right programme and official portal.
+                </p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Simple, free guidance</li>
+                    <li><i class="fa-solid fa-check"></i> Information on official schemes</li>
+                    <li><i class="fa-solid fa-check"></i> Help with documents</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section><section class="services section-padding" id="links">
+    <div class="container">
+        <div class="section-heading">
+            <span>OFFICIAL RESOURCES</span>
+            <h2>Useful Government Links</h2>
+            <p>
+                Apply and verify information only through
+                official government portals.
+            </p>
+        </div>
+
+        <div class="gov-links-grid">
+            <a class="gov-link" href="https://www.standupmitra.in/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-people-group"></i>
+                <div>
+                    <h3>Stand-Up Mitra</h3>
+                    <p>Stand-Up India loan portal</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square go"></i>
+            </a>
+            <a class="gov-link" href="https://www.mudra.org.in/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-coins"></i>
+                <div>
+                    <h3>MUDRA</h3>
+                    <p>PM Mudra Yojana information</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square go"></i>
+            </a>
+            <a class="gov-link" href="https://www.kviconline.gov.in/pmegpeportal/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-gear"></i>
+                <div>
+                    <h3>PMEGP e-Portal</h3>
+                    <p>Apply for PMEGP online</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square go"></i>
+            </a>
+            <a class="gov-link" href="https://udyamregistration.gov.in/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-id-card"></i>
+                <div>
+                    <h3>Udyam Registration</h3>
+                    <p>Register your MSME</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square go"></i>
+            </a>
+            <a class="gov-link" href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-landmark"></i>
+                <div>
+                    <h3>National Portal of India</h3>
+                    <p>Government services directory</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square go"></i>
+            </a>
+        </div>
+    </div>
+</section><section class="cta-section">
+    <div class="container cta-content">
+        <div><span>AFTER FUNDING</span><h2>Plan your money before you borrow.</h2><p>Use the pricing, break-even and record book tools to run a healthy business.</p></div>
+        <a href="planning.html" class="btn btn-primary">Open Financial Planning <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo"><i class="fa-solid fa-leaf"></i> Finora</a>
+                <p>Free tools and guides to help women in India start, fund and grow their own businesses.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a><a href="awareness.html">Financial Awareness</a><a href="entrepreneurs.html">Women Entrepreneur</a><a href="schemes.html">Government Schemes</a><a href="planning.html">Financial Planning</a>
+            </div>
+            <div class="footer-links">
+                <h3>Popular Tools</h3>
+                <a href="schemes.html#finder">Scheme Finder</a>
+                <a href="schemes.html#readiness">Loan Readiness Check</a>
+                <a href="entrepreneurs.html#matcher">Business Idea Matcher</a>
+                <a href="planning.html#recordbook">Money Record Book</a>
+                <a href="awareness.html#scamgame">Scam Spotter</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Report Fraud</h3>
+                <p><i class="fa-solid fa-phone"></i> Cyber fraud helpline: 1930</p>
+                <p><i class="fa-solid fa-globe"></i> <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">cybercrime.gov.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Finora. All Rights Reserved.</p>
+            <p>Empowering Women. Enabling Financial Freedom.</p>
+            <p class="footer-disclaimer">Information on this site is for awareness only and may change. Please verify details on official government portals before you apply.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/creative.js"></script>
+</body>
+</html>

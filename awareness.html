@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Awareness | Finora</title>
+    <meta name="description" content="Play the Scam Spotter game, learn business money basics and test your financial knowledge.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/creative.css">
+</head>
+<body>
+
+<!-- ================= NAVIGATION BAR ================= -->
+<header class="header">
+    <nav class="navbar container">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Finora</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="awareness.html" class="active">Financial Awareness</a></li><li><a href="entrepreneurs.html">Women Entrepreneur</a></li><li><a href="schemes.html">Government Schemes</a></li><li><a href="planning.html">Financial Planning</a></li></ul>
+        <div class="nav-icons"><a href="#scamgame" aria-label="Scam Spotter"><i class="fa-solid fa-gamepad"></i></a><a href="#quiz" aria-label="Quiz"><i class="fa-regular fa-lightbulb"></i></a></div>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero home-hero">
+    <div class="hero-container container">
+        <div class="hero-content">
+            <span class="hero-label">FINANCIAL AWARENESS &bull; PROTECT &bull; LEARN</span>
+            <h1>Learn the money basics, <span>stay safe.</span></h1>
+            <h3>Know before you pay</h3>
+            <p>Fraud and confusing jargon cost small business owners real money. Practise spotting scams in a quick game, learn the terms banks use and test what you know.</p>
+            <div class="hero-buttons"><a href="#scamgame" class="btn btn-primary">Play Scam Spotter <i class="fa-solid fa-gamepad"></i></a><a href="#basics" class="btn btn-outline">Business Money Basics <i class="fa-solid fa-book-open"></i></a></div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85" alt="Woman using a phone safely for payments">
+            <div class="hero-stat-card"><div class="stat-item"><i class="fa-solid fa-shield-halved"></i><h3>Protect</h3><p>Your payments</p></div><div class="stat-item"><i class="fa-solid fa-book-open"></i><h3>Learn</h3><p>Bank terms</p></div><div class="stat-item"><i class="fa-solid fa-graduation-cap"></i><h3>Test</h3><p>Your knowledge</p></div></div>
+        </div>
+    </div>
+</section>
+<section class="about section-padding" id="redflags"><div class="container"><div class="section-heading"><span>SPOT THE RED FLAGS</span><h2>Read this message like a fraud investigator</h2><p>This is a typical fake bank SMS. Tap every underlined red flag on the phone to see why it is a warning sign.</p></div>
+<div class="flag-wrap" id="flagGame">
+ <div class="phone" aria-label="Example of a fake bank text message"><div class="phone-screen">
+  <div class="sms-head"><span class="sms-avatar"><i class="fa-solid fa-user"></i></span><div>From: <button type="button" class="flag" data-title="Sender is an ordinary mobile number" data-why="Real bank alerts come from a short sender name such as VM-BANKNM, not from a personal 10-digit mobile number.">+91 98XXX XX210</button></div></div>
+  <div class="sms-bubble">Dear customer, your bank account <button type="button" class="flag" data-title="Fear and urgency" data-why="Fraudsters rush you with threats such as blocking, penalty or arrest so you panic and stop thinking. Real banks give you time and use your registered channels.">will be BLOCKED today!</button> Update KYC now: <button type="button" class="flag" data-title="Strange link" data-why="Official bank links use the bank&rsquo;s exact website name. A made-up address like this one is built to steal your login. Open your bank&rsquo;s own app instead of tapping links.">http://bank-kyc-update.xyz/login</button> and <button type="button" class="flag" data-title="Asks for your OTP" data-why="An OTP is the key to your money. Banks and the police never ask you to share an OTP, PIN or password, not even to cancel a payment.">reply with the OTP</button> you receive.<span class="sms-time">10:42 AM</span></div>
+ </div></div>
+ <div class="flag-panel"><h3>Find all 4 warning signs</h3><p>Scam messages mix pressure, a trick link and a request for secrets. Once you can see the pattern, it stops working on you.</p>
+  <div class="flag-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><span id="flagCount">0 of 4 found</span></div>
+  <div class="flag-info" id="flagInfo" aria-live="polite"><h4><i class="fa-solid fa-hand-pointer"></i>Tap a dashed underline</h4><p>Start with the sender, then read the message slowly.</p></div>
+ </div></div></div></section><section class="services section-padding" id="scamgame"><div class="container"><div class="section-heading"><span>SCAM SPOTTER</span><h2>Scam or safe? You decide.</h2><p>Eight real-life situations. Tap your answer to see why.</p></div>
+<div class="scam-game" id="scamGame">
+ <div class="progress-head"><span id="scamStep">Situation 1 of 8</span><span id="scamScore">Score: 0</span></div>
+ <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="scamBar"></div></div>
+ <div class="scam-card" id="scamCard"></div>
+ <div class="scam-actions" id="scamActions">
+  <button type="button" class="btn scam-btn scam-yes" data-answer="scam"><i class="fa-solid fa-triangle-exclamation"></i> It&rsquo;s a scam</button>
+  <button type="button" class="btn scam-btn scam-no" data-answer="safe"><i class="fa-solid fa-circle-check"></i> It looks safe</button>
+ </div>
+ <div class="scam-feedback" id="scamFeedback" aria-live="polite" hidden></div>
+ <div class="scam-final" id="scamFinal" hidden></div>
+</div></div></section><section class="about section-padding" id="safety"><div class="container"><div class="never-head"><h3>Four things you never share, with anyone</h3><p>Not with a &ldquo;bank officer&rdquo;, a delivery agent or a family friend on the phone.</p></div>
+<div class="never-row">
+ <div class="never"><div class="never-ic"><i class="fa-solid fa-message"></i></div><b>OTP</b><small>The code sent to your phone</small></div>
+ <div class="never"><div class="never-ic"><i class="fa-solid fa-lock"></i></div><b>UPI PIN / ATM PIN</b><small>You only enter it to pay, never to receive</small></div>
+ <div class="never"><div class="never-ic"><i class="fa-solid fa-credit-card"></i></div><b>Card CVV and expiry</b><small>The numbers on the back of your card</small></div>
+ <div class="never"><div class="never-ic"><i class="fa-solid fa-display"></i></div><b>Screen-sharing access</b><small>Remote apps let a stranger see and control your phone</small></div>
+</div>
+<div class="safety-notice"><i class="fa-solid fa-circle-exclamation"></i><div><h3>If you are cheated, act within hours</h3><p>Call the cyber fraud helpline <strong>1930</strong> immediately and report on the official portal. Quick reporting gives the best chance of stopping the money. Also tell your bank to block the card or UPI ID.</p><a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">Visit Cyber Crime Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div></div></section><section class="services section-padding" id="basics"><div class="container"><div class="section-heading"><span>BUSINESS MONEY BASICS</span><h2>Six ideas every owner should know</h2><p>Plain-language explanations of what banks and advisers keep saying.</p></div>
+<div class="essentials-grid"><div class="essential-card"><div class="safety-icon"><i class="fa-solid fa-coins"></i></div><h3>Revenue vs profit</h3><p>Revenue is all the money you receive. Profit is what is left after you pay every cost. A business with &#8377;50,000 in sales and &#8377;48,000 in costs earns only &#8377;2,000.</p></div><div class="essential-card"><div class="safety-icon"><i class="fa-solid fa-gauge-high"></i></div><h3>Credit score</h3><p>A number (usually 300 to 900) that shows lenders how reliably you repay. Pay on time, avoid maxing out cards and check your report for mistakes.</p></div><div class="essential-card"><div class="safety-icon"><i class="fa-solid fa-house-lock"></i></div><h3>Collateral</h3><p>An asset pledged as security for a loan. Many women own little property, so look for collateral-free loans and credit guarantee schemes.</p></div><div class="essential-card"><div class="safety-icon"><i class="fa-solid fa-box-open"></i></div><h3>Working capital vs term loan</h3><p>Working capital covers daily needs like stock and wages. A term loan buys longer-term items like machines. Match the loan to the need.</p></div><div class="essential-card"><div class="safety-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><h3>Informal lenders</h3><p>Money lenders can charge very high interest and keep your papers or assets. Compare with a bank, SHG or scheme loan before you accept.</p></div><div class="essential-card"><div class="safety-icon"><i class="fa-solid fa-umbrella"></i></div><h3>Business insurance</h3><p>Insurance can protect stock, equipment and your income from fire, theft or illness. Buy only what you understand, directly from a trusted insurer.</p></div></div></div></section><section class="about section-padding" id="myths"><div class="container"><div class="section-heading"><span>FACT CHECK</span><h2>Myths vs facts</h2><p>Common beliefs that can cost you money.</p></div>
+<div class="myth-grid"><div class="myth-card"><span class="myth-label myth">MYTH</span><p>An agent can get my loan approved faster.</p><span class="myth-label fact">FACT</span><p>Schemes are applied for directly at banks and official portals. Agents who demand money may be cheating you.</p></div><div class="myth-card"><span class="myth-label myth">MYTH</span><p>Checking my own credit score lowers it.</p><span class="myth-label fact">FACT</span><p>Checking your own score is a soft enquiry and does not reduce it.</p></div><div class="myth-card"><span class="myth-label myth">MYTH</span><p>A bank officer may call to ask for my OTP to fix a problem.</p><span class="myth-label fact">FACT</span><p>Banks never ask for your OTP, PIN or password. Anyone who does is a fraudster.</p></div><div class="myth-card"><span class="myth-label myth">MYTH</span><p>A family account is enough, I do not need my own.</p><span class="myth-label fact">FACT</span><p>An account in your own name gives you control over your earnings and builds your own financial record.</p></div><div class="myth-card"><span class="myth-label myth">MYTH</span><p>I need property to get a business loan.</p><span class="myth-label fact">FACT</span><p>Several schemes offer collateral-free loans for small businesses. Good records and a clear plan help a lot.</p></div><div class="myth-card"><span class="myth-label myth">MYTH</span><p>Small businesses do not need records.</p><span class="myth-label fact">FACT</span><p>Records prove income, help you price correctly and are often required for loans.</p></div></div>
+<div class="glossary"><h3><i class="fa-solid fa-book"></i> Quick Glossary</h3><dl><div><dt>EMI</dt><dd>A fixed monthly payment that repays a loan with interest.</dd></div><div><dt>Collateral</dt><dd>An asset you pledge to a lender as security for a loan.</dd></div><div><dt>Working capital</dt><dd>Money for day-to-day running costs such as stock, wages and rent.</dd></div><div><dt>Margin money</dt><dd>Your own contribution towards the cost of a project.</dd></div><div><dt>Udyam</dt><dd>The free government registration for micro, small and medium enterprises.</dd></div><div><dt>Subsidy</dt><dd>Financial help from the government that reduces what you pay or borrow.</dd></div><div><dt>Credit guarantee</dt><dd>Cover that protects the lender if a borrower cannot repay, so banks can lend without collateral.</dd></div><div><dt>Nominee</dt><dd>The person you name to receive your account or policy money if something happens to you.</dd></div></dl></div>
+</div></section><section class="services section-padding" id="quiz">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>TEST YOUR KNOWLEDGE</span>
+
+            <h2>
+                Financial Knowledge Quiz
+            </h2>
+
+            <p>
+                Answer five simple questions and discover
+                how much you know about managing money.
+            </p>
+
+        </div>
+
+
+        <div class="quiz-container">
+
+            <div class="quiz-header">
+
+                <div>
+
+                    <span class="quiz-label">
+                        FINANCIAL LITERACY CHALLENGE
+                    </span>
+
+                    <h3>Test What You Know</h3>
+
+                </div>
+
+                <div class="quiz-count">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <span>5 Questions</span>
+
+                </div>
+
+            </div>
+
+
+            <form id="financeQuiz">
+
+
+                <!-- QUESTION 1 -->
+
+                <div class="quiz-question">
+
+                    <h4>
+                        01. What is the main purpose of saving money?
+                    </h4>
+
+                    <label>
+                        <input type="radio" name="q1" value="a">
+                        To spend more money
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q1" value="b">
+                        To prepare for future needs
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q1" value="c">
+                        To avoid earning money
+                    </label>
+
+                </div>
+
+
+                <!-- QUESTION 2 -->
+
+                <div class="quiz-question">
+
+                    <h4>
+                        02. What does EMI stand for?
+                    </h4>
+
+                    <label>
+                        <input type="radio" name="q2" value="a">
+                        Estimated Monthly Income
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q2" value="b">
+                        Equal Money Investment
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q2" value="c">
+                        Equated Monthly Instalment
+                    </label>
+
+                </div>
+
+
+                <!-- QUESTION 3 -->
+
+                <div class="quiz-question">
+
+                    <h4>
+                        03. Which information should never be shared?
+                    </h4>
+
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        Bank OTP and PIN
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        General financial knowledge
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        Public banking information
+                    </label>
+
+                </div>
+
+
+                <!-- QUESTION 4 -->
+
+                <div class="quiz-question">
+
+                    <h4>
+                        04. What is the purpose of a budget?
+                    </h4>
+
+                    <label>
+                        <input type="radio" name="q4" value="a">
+                        To increase unnecessary spending
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q4" value="b">
+                        To plan income and expenses
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q4" value="c">
+                        To stop saving money
+                    </label>
+
+                </div>
+
+
+                <!-- QUESTION 5 -->
+
+                <div class="quiz-question">
+
+                    <h4>
+                        05. What is an emergency fund?
+                    </h4>
+
+                    <label>
+                        <input type="radio" name="q5" value="a">
+                        Money kept for shopping
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q5" value="b">
+                        Money used only for investments
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q5" value="c">
+                        Money reserved for unexpected expenses
+                    </label>
+
+                </div>
+
+
+                <div class="quiz-actions">
+
+                    <button type="submit" class="btn btn-primary">
+
+                        Submit Answers
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                    <button type="reset" class="btn btn-outline quiz-reset">
+
+                        Reset Quiz
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- QUIZ RESULT -->
+
+                <div id="quizResult" class="quiz-result" aria-live="polite" hidden>
+
+                    <i class="fa-solid fa-trophy"></i>
+
+                    <h3>Your Result</h3>
+
+                    <p id="scoreText"></p>
+
+                    <p id="resultMessage"></p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section><section class="cta-section">
+    <div class="container cta-content">
+        <div><span>NEXT STEP</span><h2>Now put your knowledge to work.</h2><p>Find schemes that fit you and check how ready you are for a loan.</p></div>
+        <a href="schemes.html#finder" class="btn btn-primary">Open Scheme Finder <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo"><i class="fa-solid fa-leaf"></i> Finora</a>
+                <p>Free tools and guides to help women in India start, fund and grow their own businesses.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a><a href="awareness.html">Financial Awareness</a><a href="entrepreneurs.html">Women Entrepreneur</a><a href="schemes.html">Government Schemes</a><a href="planning.html">Financial Planning</a>
+            </div>
+            <div class="footer-links">
+                <h3>Popular Tools</h3>
+                <a href="schemes.html#finder">Scheme Finder</a>
+                <a href="schemes.html#readiness">Loan Readiness Check</a>
+                <a href="entrepreneurs.html#matcher">Business Idea Matcher</a>
+                <a href="planning.html#recordbook">Money Record Book</a>
+                <a href="awareness.html#scamgame">Scam Spotter</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Report Fraud</h3>
+                <p><i class="fa-solid fa-phone"></i> Cyber fraud helpline: 1930</p>
+                <p><i class="fa-solid fa-globe"></i> <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">cybercrime.gov.in</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Finora. All Rights Reserved.</p>
+            <p>Empowering Women. Enabling Financial Freedom.</p>
+            <p class="footer-disclaimer">Information on this site is for awareness only and may change. Please verify details on official government portals before you apply.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/creative.js"></script>
+</body>
+</html>
